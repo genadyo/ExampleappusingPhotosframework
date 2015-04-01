@@ -1,6 +1,6 @@
 ## Example app using Photos framework - enumerateMovesWithBlock Issue
 
-This is an example project to repreduce the bad access i'm having on collectionChanges enumerateMovesWithBlock.
+This is an example project to reproduce the bad access i'm having on collectionChanges enumerateMovesWithBlock.
 
 ## Steps to create this project:
 1. Download the example from https://developer.apple.com/library/ios/samplecode/UsingPhotosFramework/Introduction/Intro.html#//apple_ref/doc/uid/TP40014575
@@ -8,7 +8,7 @@ This is an example project to repreduce the bad access i'm having on collectionC
 
 This add the support for moving updated items with collectionChanges.hasMoves.
 
-## Steps to repreduce the bad access:
+## Steps to reproduce the bad access:
 1. Run the example.
 2. Download and run Organizer https://itunes.apple.com/us/app/organizer-all-your-photos/id954717485
 3. Use Organizer to adjust a date of a photo (Version 1.2.0 will crash because it uses the same code).
