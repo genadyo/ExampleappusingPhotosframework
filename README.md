@@ -1,28 +1,18 @@
-<<<<<<< HEAD
-# ExampleappusingPhotosframework
-=======
-# Example app using Photos framework
+### Example app using Photos framework - enumerateMovesWithBlock Issue
 
-A basic Photos-like app which introduces the Photos framework. 
-- List albums, folders and moments
-- Display the contents of the moments, or a single album
-- Display the content of a single photo or video (and allow playback in the case of a video)
-- Allow the following actions:
-    * simple single-click edit of a photo
-    * creating an album and adding assets to it
-    * re-ordering of assets in an album
-    * removing assets from an album
-    * deleting assets and albums
-    * (un)hiding an asset from moments
-    * favoriting an asset
+This is an example project to repreduce the bad access i'm having on collectionChanges enumerateMovesWithBlock.
 
-## Build Requirements
+### Steps to create this project:
+1. Download the example from https://developer.apple.com/library/ios/samplecode/UsingPhotosFramework/Introduction/Intro.html#//apple_ref/doc/uid/TP40014575
+2. Use the photoLibraryDidChange example from https://developer.apple.com/library/prerelease/ios/documentation/Photos/Reference/PHPhotoLibraryChangeObserver_Protocol/index.html
 
-iOS 8 SDK
+This add the support for moving updated items with collectionChanges.hasMoves.
 
-## Runtime Requirements
+### Steps to repreduce the bad access:
+1. Run the example.
+2. Download and run Organizer https://itunes.apple.com/us/app/organizer-all-your-photos/id954717485
+3. Use Organizer to adjust a date of a photo (Version 1.2.0 will crash because it uses the same code).
+4. Switch back to the example.
 
-iOS 8 or later
-
-Copyright (C) 2014 Apple Inc. All rights reserved.
->>>>>>> Initial commit
+### Result:
+1. http://cl.ly/image/0T0u3D2z170A/Screen%20Shot%202015-04-02%20at%2002.37.13.png
