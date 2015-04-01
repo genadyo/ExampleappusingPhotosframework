@@ -1,4 +1,4 @@
-### Example app using Photos framework - enumerateMovesWithBlock Issue
+## Example app using Photos framework - enumerateMovesWithBlock Issue
 
 This is an example project to repreduce the bad access i'm having on collectionChanges enumerateMovesWithBlock.
 
