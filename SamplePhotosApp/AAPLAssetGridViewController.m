@@ -107,29 +107,35 @@ static CGSize AssetGridThumbnailSize;
             
             // get the new fetch result
             self.assetsFetchResults = [collectionChanges fetchResultAfterChanges];
-            
-            UICollectionView *collectionView = self.collectionView;
-            
-            if (![collectionChanges hasIncrementalChanges] || [collectionChanges hasMoves]) {
-                // we need to reload all if the incremental diffs are not available
-                [collectionView reloadData];
-                
+
+            if (collectionChanges.hasIncrementalChanges)  {
+                // Tell the collection view to animate insertions/deletions/moves
+                // and to refresh any cells that have changed content.
+                [self.collectionView performBatchUpdates:^{
+                    NSIndexSet *removed = collectionChanges.removedIndexes;
+                    if (removed.count) {
+                        [self.collectionView deleteItemsAtIndexPaths:[removed aapl_indexPathsFromIndexesWithSection:0]];
+                    }
+                    NSIndexSet *inserted = collectionChanges.insertedIndexes;
+                    if (inserted.count) {
+                        [self.collectionView insertItemsAtIndexPaths:[inserted aapl_indexPathsFromIndexesWithSection:0]];
+                    }
+                    NSIndexSet *changed = collectionChanges.changedIndexes;
+                    if (changed.count) {
+                        [self.collectionView reloadItemsAtIndexPaths:[changed aapl_indexPathsFromIndexesWithSection:0]];
+                    }
+                    if (collectionChanges.hasMoves) {
+                        [collectionChanges enumerateMovesWithBlock:^(NSUInteger fromIndex, NSUInteger toIndex) {
+                            NSIndexPath *fromIndexPath = [NSIndexPath indexPathForItem:fromIndex inSection:0];
+                            NSIndexPath *toIndexPath = [NSIndexPath indexPathForItem:toIndex inSection:0];
+                            [self.collectionView moveItemAtIndexPath:fromIndexPath toIndexPath:toIndexPath];
+                        }];
+                    }
+                } completion:nil];
             } else {
-                // if we have incremental diffs, tell the collection view to animate insertions and deletions
-                [collectionView performBatchUpdates:^{
-                    NSIndexSet *removedIndexes = [collectionChanges removedIndexes];
-                    if ([removedIndexes count]) {
-                        [collectionView deleteItemsAtIndexPaths:[removedIndexes aapl_indexPathsFromIndexesWithSection:0]];
-                    }
-                    NSIndexSet *insertedIndexes = [collectionChanges insertedIndexes];
-                    if ([insertedIndexes count]) {
-                        [collectionView insertItemsAtIndexPaths:[insertedIndexes aapl_indexPathsFromIndexesWithSection:0]];
-                    }
-                    NSIndexSet *changedIndexes = [collectionChanges changedIndexes];
-                    if ([changedIndexes count]) {
-                        [collectionView reloadItemsAtIndexPaths:[changedIndexes aapl_indexPathsFromIndexesWithSection:0]];
-                    }
-                } completion:NULL];
+                // Detailed change information is not available;
+                // repopulate the UI from the current fetch result.
+                [self.collectionView reloadData];
             }
             
             [self resetCachedAssets];
