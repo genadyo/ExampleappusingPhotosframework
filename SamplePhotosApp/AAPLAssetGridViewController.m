@@ -84,6 +84,22 @@ static CGSize AssetGridThumbnailSize;
 {
     [super viewDidAppear:animated];
     [self updateCachedAssets];
+
+    // DONT RUN IN ON A REAL DEVICE
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self shuffle];
+    });
+}
+
+- (void)shuffle {
+    __weak id wself = self;
+        id asset = self.assetsFetchResults[arc4random_uniform((int)self.assetsFetchResults.count)];
+        [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+            PHAssetChangeRequest *change = [PHAssetChangeRequest changeRequestForAsset:asset];
+            change.creationDate = [NSDate date];
+        } completionHandler:^(BOOL success, NSError *error) {
+            [wself shuffle];
+        }];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
