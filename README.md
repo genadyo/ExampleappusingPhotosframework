@@ -1,6 +1,6 @@
 ## Example app using Photos framework - enumerateMovesWithBlock Issue
 
-This is an example project to reproduce the bad access i'm having on collectionChanges enumerateMovesWithBlock.
+This is an example project to reproduce the bad access I'm having on collectionChanges enumerateMovesWithBlock.
 
 ## Steps I used to create this project:
 1. Download the example from: https://developer.apple.com/library/ios/samplecode/UsingPhotosFramework/Introduction/Intro.html#//apple_ref/doc/uid/TP40014575
