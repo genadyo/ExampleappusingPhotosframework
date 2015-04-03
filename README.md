@@ -10,7 +10,7 @@ This added the support for moving updated items with collectionChanges.hasMoves.
 
 ## Steps to reproduce the bad access:
 1. Run the example, the following code will start updating the creation date:
-```
+```Objective-C
 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
   [self shuffle];
 });
@@ -18,3 +18,13 @@ dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), di
 
 ## Result:
 1. http://cl.ly/image/0T0u3D2z170A/Screen%20Shot%202015-04-02%20at%2002.37.13.png
+
+## Workaround (by @zats):
+1. Uncomment the following lines in patch.m
+```Objective-C
++ (void)load {
+    @autoreleasepool {
+        [self _patchPhotoLibraryServices];
+    }
+}
+```
