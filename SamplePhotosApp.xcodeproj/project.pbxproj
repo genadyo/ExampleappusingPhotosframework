@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		11A9AC6A193531AE00C5AC7F /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A9AC69193531AE00C5AC7F /* Storyboard.storyboard */; };
+		5C0C77721ACCF16B0044BF8C /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = 5C0C77701ACCF16B0044BF8C /* fishhook.c */; };
 		A7CF22D21933ED8900E6E88E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CF22D11933ED8900E6E88E /* main.m */; };
 		A7CF22D51933ED8900E6E88E /* AAPLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CF22D41933ED8900E6E88E /* AAPLAppDelegate.m */; };
 		A7CF22D71933ED8900E6E88E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CF22D61933ED8900E6E88E /* Images.xcassets */; };
@@ -19,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		11A9AC69193531AE00C5AC7F /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		5C0C77701ACCF16B0044BF8C /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fishhook.c; sourceTree = "<group>"; };
+		5C0C77711ACCF16B0044BF8C /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
 		A738785B1989954300D76B24 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A7CF22CC1933ED8900E6E88E /* SamplePhotosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SamplePhotosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7CF22D01933ED8900E6E88E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +70,8 @@
 		A7CF22CE1933ED8900E6E88E /* SamplePhotosApp */ = {
 			isa = PBXGroup;
 			children = (
+				5C0C77701ACCF16B0044BF8C /* fishhook.c */,
+				5C0C77711ACCF16B0044BF8C /* fishhook.h */,
 				A7CF22D31933ED8900E6E88E /* AAPLAppDelegate.h */,
 				A7CF22D41933ED8900E6E88E /* AAPLAppDelegate.m */,
 				A7CF22EF1933F11D00E6E88E /* AAPLRootListViewController.h */,
@@ -161,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7CF22FA1933F51500E6E88E /* AAPLGridViewCell.m in Sources */,
+				5C0C77721ACCF16B0044BF8C /* fishhook.c in Sources */,
 				A7CF22F41933F39000E6E88E /* AAPLAssetGridViewController.m in Sources */,
 				A7CF22FD1933FD2600E6E88E /* AAPLAssetViewController.m in Sources */,
 				A7CF22D51933ED8900E6E88E /* AAPLAppDelegate.m in Sources */,
