@@ -9,10 +9,12 @@ This is an example project to reproduce the bad access I'm having on collectionC
 This added the support for moving updated items with collectionChanges.hasMoves.
 
 ## Steps to reproduce the bad access:
-1. Run the example.
-2. Download and run Organizer: https://itunes.apple.com/us/app/organizer-all-your-photos/id954717485
-3. Use Organizer to adjust a date of a photo (Version 1.2.0 will crash because it uses the same code).
-4. Switch back to the example.
+1. Run the example, the following code will start updating the creation date:
+```
+dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+  [self shuffle];
+});
+```
 
 ## Result:
 1. http://cl.ly/image/0T0u3D2z170A/Screen%20Shot%202015-04-02%20at%2002.37.13.png
