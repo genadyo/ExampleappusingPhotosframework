@@ -16,6 +16,7 @@
 		A7CF22F41933F39000E6E88E /* AAPLAssetGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CF22F31933F39000E6E88E /* AAPLAssetGridViewController.m */; };
 		A7CF22FA1933F51500E6E88E /* AAPLGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CF22F91933F51500E6E88E /* AAPLGridViewCell.m */; };
 		A7CF22FD1933FD2600E6E88E /* AAPLAssetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CF22FC1933FD2600E6E88E /* AAPLAssetViewController.m */; };
+		B21114D91ACE8FA8000F0A2B /* patch.m in Sources */ = {isa = PBXBuildFile; fileRef = B21114D81ACE8FA8000F0A2B /* patch.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		A7CF22F91933F51500E6E88E /* AAPLGridViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLGridViewCell.m; sourceTree = "<group>"; };
 		A7CF22FB1933FD2600E6E88E /* AAPLAssetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLAssetViewController.h; sourceTree = "<group>"; };
 		A7CF22FC1933FD2600E6E88E /* AAPLAssetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AAPLAssetViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		B21114D81ACE8FA8000F0A2B /* patch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = patch.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			children = (
 				5C0C77701ACCF16B0044BF8C /* fishhook.c */,
 				5C0C77711ACCF16B0044BF8C /* fishhook.h */,
+				B21114D81ACE8FA8000F0A2B /* patch.m */,
 				A7CF22D31933ED8900E6E88E /* AAPLAppDelegate.h */,
 				A7CF22D41933ED8900E6E88E /* AAPLAppDelegate.m */,
 				A7CF22EF1933F11D00E6E88E /* AAPLRootListViewController.h */,
@@ -167,6 +170,7 @@
 			files = (
 				A7CF22FA1933F51500E6E88E /* AAPLGridViewCell.m in Sources */,
 				5C0C77721ACCF16B0044BF8C /* fishhook.c in Sources */,
+				B21114D91ACE8FA8000F0A2B /* patch.m in Sources */,
 				A7CF22F41933F39000E6E88E /* AAPLAssetGridViewController.m in Sources */,
 				A7CF22FD1933FD2600E6E88E /* AAPLAssetViewController.m in Sources */,
 				A7CF22D51933ED8900E6E88E /* AAPLAppDelegate.m in Sources */,

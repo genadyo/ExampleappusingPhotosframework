@@ -85,9 +85,8 @@ static CGSize AssetGridThumbnailSize;
     [super viewDidAppear:animated];
     [self updateCachedAssets];
 
-    // DONT RUN IN ON A REAL DEVICE
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [self shuffle];
+        [self shuffle];
     });
 }
 
