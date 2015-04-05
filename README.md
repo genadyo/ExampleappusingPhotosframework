@@ -17,7 +17,7 @@ dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), di
 ```
 
 ## Result:
-1. http://cl.ly/image/0T0u3D2z170A/Screen%20Shot%202015-04-02%20at%2002.37.13.png
+1. https://raw.githubusercontent.com/genadyo/ExampleappusingPhotosframework/master/result.png
 
 ## Workaround (by @zats):
 1. Uncomment the following lines in patch.m:
