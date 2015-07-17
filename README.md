@@ -1,6 +1,6 @@
 ## Example app using Photos framework - enumerateMovesWithBlock Issue
 
-This is an example project to reproduce the bad access I'm having on collectionChanges enumerateMovesWithBlock.
+This is an example project to reproduce the assertion failure I'm having on collectionChanges enumerateMovesWithBlock.
 
 ## Steps I used to create this project:
 1. Download the example from: https://developer.apple.com/library/ios/samplecode/UsingPhotosFramework/Introduction/Intro.html#//apple_ref/doc/uid/TP40014575
@@ -17,14 +17,8 @@ dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), di
 ```
 
 ## Result:
-1. https://raw.githubusercontent.com/genadyo/ExampleappusingPhotosframework/master/result.png
-
-## Workaround (by @zats):
-1. Uncomment the following lines in patch.m:
+1.  The same indexPath is used for reloadItemsAtIndexPaths and moveItemAtIndexPath:
 ```Objective-C
-+ (void)load {
-    @autoreleasepool {
-        [self _patchPhotoLibraryServices];
-    }
-}
+Assertion failure in -[UICollectionView _endItemAnimationsWithInvalidationContext:tentativelyForReordering:], /BuildRoot/Library/Caches/com.apple.xbs/Sources/UIKit_Sim/UIKit-3486.4/UICollectionView.m:3948
+attempt to perform a delete and a move from the same index path (<NSIndexPath: 0xc000000001200016> {length = 2, path = 0 - 9})
 ```
